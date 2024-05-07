@@ -14,12 +14,12 @@ function ArticlesList () {
     }, [])
 
     return ( 
-        <div>
+        <section>
             {articles.map((article) => {
                 return <ArticleCard article={article} key={article.article_id}/>
             })}
             
-        </div>
+        </section>
     )
 }
 
