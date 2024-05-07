@@ -6,9 +6,6 @@ function getArticleById(article_id) {
         .then((response) => {
             return response.data.article[0]
         })
-        .catch((err) => {
-            console.log(err);
-        })
     }
 
 export default getArticleById

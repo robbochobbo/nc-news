@@ -11,13 +11,10 @@ function ArticlesList () {
         .then((response) => {
             setArticles(response.data.articles)
         })
-        .catch((err) => {
-            console.log(err);
-        })
     }, [])
 
     return ( 
-        <section className="articles">
+        <section>
             {articles.map((article) => {
                 return <ArticleCard article={article} key={article.article_id}/>
             })}
