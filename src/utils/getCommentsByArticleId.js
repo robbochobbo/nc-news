@@ -6,9 +6,6 @@ function getCommentsByArticleId(article_id) {
         .then((response) => {
             return response.data.comments
         })
-        .catch((err) => {
-            console.log(err);
-        })
     }
 
 export default getCommentsByArticleId
