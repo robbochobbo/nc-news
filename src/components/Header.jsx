@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom"
 import { CurrentUserContext } from "../contexts/CurrentUser"
 import { useContext } from "react"
+import Nav from "./Nav"
 
-function Header () {
+function Header ({topics}) {
 
     const {currentUser, setCurrentUser} = useContext(CurrentUserContext)
     
@@ -20,6 +21,7 @@ function Header () {
             <Link to="/">
                 <h1> NC NEWS</h1>
             </Link >
+            <Nav topics={topics}/>
         </>
     )
 }
