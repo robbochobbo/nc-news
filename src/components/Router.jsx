@@ -2,11 +2,13 @@ import { Routes, Route } from 'react-router-dom';
 import ArticlesList from "./ArticlesList"
 import IndividualArticlePage from "./individualArticlePage/IndividualArticlePage"
 import Login from './Login';
+import ErrorPage from './ErrorPage';
 
 function Router () {
 
     return (
             <Routes>
+                <Route path="/*" element={<ErrorPage/>}/>
                 <Route path="/" element={<ArticlesList/>}/>
                 <Route path="/:topic" element={<ArticlesList/>}/>
                 <Route path="articles">
