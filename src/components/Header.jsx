@@ -14,6 +14,9 @@ function Header () {
         .then((response) => {
             setTopics(response)
         })
+        .catch((err) => {
+            console.log(err);
+        })
         
     }, [])
     
