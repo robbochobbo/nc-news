@@ -36,7 +36,7 @@ function IndividualArticlePage () {
             setSuccessfulComment(false)
             setErr("Something went wrong, please try again.");
         })
-    }, [successfulComment])
+    }, [successfulComment, commentDeletedId])
     
     
     const handleVote = (vote) => {

@@ -1,11 +1,21 @@
 import {Link} from "react-router-dom"
 import { CurrentUserContext } from "../contexts/CurrentUser"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import Nav from "./Nav"
+import getTopics from "../utils/getTopics"
 
-function Header ({topics}) {
-
+function Header () {
     const {currentUser, setCurrentUser} = useContext(CurrentUserContext)
+
+    const [topics, setTopics] = useState([])
+
+    useEffect(()=> {
+        getTopics()
+        .then((response) => {
+            setTopics(response)
+        })
+        
+    }, [])
     
     const handleClick = () => {
         setCurrentUser(null)
