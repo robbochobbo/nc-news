@@ -9,7 +9,7 @@ function Comments({comments, commentDeletedId, setCommentDeletedId}) {
     const {currentUser} = useContext(CurrentUserContext)
 
     const handleClick = (comment_id) => {
-        setCommentDeletedId(comment_id)
+
         deleteComment(comment_id)
         .then((response) => {
             if(response.status === 204){

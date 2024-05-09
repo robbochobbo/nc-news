@@ -30,7 +30,6 @@ function IndividualArticlePage () {
         .then((commentsFromApi) => {
             setComments(commentsFromApi)
             setCommentDeletedId(null)
-            
         })
         .catch((err) => {
             setCurrentVotes(currentVotes - vote)

@@ -1,22 +1,30 @@
 import {useEffect, useState} from "react"
-import axios from "axios"
 import ArticleCard from "./ArticleCard"
+import getArticles from "../utils/getArticles"
+import { useParams } from "react-router-dom"
 
-function ArticlesList () {  
+function ArticlesList ({topics}) {  
     const [articles, setArticles] = useState([])
-
+    
+    const { topic } = useParams()
 
     useEffect(() => {
-        axios.get("https://robbies-articles-website.onrender.com/api/articles")
+        getArticles()
         .then((response) => {
-            setArticles(response.data.articles)
+            setArticles(response)
         })
     }, [])
 
     return ( 
         <section>
             {articles.map((article) => {
-                return <ArticleCard article={article} key={article.article_id}/>
+                if(topic === article.topic){
+                    return <ArticleCard article={article} key={article.article_id}/>
+                }
+                else if (!topic){
+                    return <ArticleCard article={article} key={article.article_id}/>
+
+                }
             })}
             
         </section>
