@@ -5,16 +5,11 @@ function Nav ({topics}) {
     
     return (
         <>  
-            <Link to="/">
-                <button>home</button>
-            </Link>
+            <Link className="nav-button" to="/">home</Link>
             {topics.map((topic) => {
                 return(
-                        <Link to={topic.slug} key={topic.slug}>
-                            <button>{topic.slug}</button>
-                        </Link>
+                        <Link className="nav-button" to={topic.slug} key={topic.slug}>{topic.slug}</Link>
                 ) 
-
             })}
         </>
     )

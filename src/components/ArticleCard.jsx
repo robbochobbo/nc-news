@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
 function ArticleCard ({article}) {
+
+
     return (
-        <Link to={`articles/${article.article_id}`} >
+        <Link to={`/articles/${article.article_id}`} >
             <Card className="article">
                     <Card.Img variant="top" src={article.article_img_url} />
             <Card.Body>
