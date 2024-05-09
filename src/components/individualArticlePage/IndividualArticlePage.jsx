@@ -17,8 +17,9 @@ function IndividualArticlePage () {
     const [validComment, setValidComment] = useState(true)
     const [comment, setComment] = useState("")
     const [successfulComment, setSuccessfulComment] = useState(false)
+    const [commentDeletedId, setCommentDeletedId] = useState(null)
     const currentUser = useContext(CurrentUserContext)
-    
+
     useEffect(() => {
         getArticleById(article_id)
         .then((articleFromApi) => {
@@ -28,6 +29,8 @@ function IndividualArticlePage () {
         .then(() => getCommentsByArticleId(article_id))
         .then((commentsFromApi) => {
             setComments(commentsFromApi)
+            setCommentDeletedId(null)
+            
         })
         .catch((err) => {
             setCurrentVotes(currentVotes - vote)
@@ -45,6 +48,7 @@ function IndividualArticlePage () {
     }
     
     const handleInput = (e) => {
+        setSuccessfulComment(false)
         setComment(e.target.value)
     }
 
@@ -91,8 +95,8 @@ function IndividualArticlePage () {
                 <p className={successfulComment ? "" : "hidden"}>Comment post successful!</p>
                 <p className={err ? "" : "hidden"}>Something went wrong, please try again.</p>
             </form>
-
-            <Comments comments={comments}/>
+            <></>
+            <Comments comments={comments} commentDeletedId={commentDeletedId} setCommentDeletedId={setCommentDeletedId}/>
         </>
     )
     
