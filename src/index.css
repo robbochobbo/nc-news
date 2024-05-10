@@ -7,6 +7,20 @@ body {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+button {
+  border: 1px solid;
+  cursor: pointer;
+  background-color: #007afc;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  }
+
+button:hover {
+  box-shadow: 1px 1px 5px;
+  background-color: #0056b3; 
+}
+
 h1 {
   font-size: 2.5em;
   text-align: center;
@@ -20,6 +34,10 @@ h2 {
 
 ul {
   list-style-type: none;
+}
+
+.container {
+  display: grid;
 }
 
 .nav-button{

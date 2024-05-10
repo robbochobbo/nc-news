@@ -8,11 +8,14 @@ function App() {
   
 
   return (
-      <CurrentUserProvider>
-        <Header />
-        <Router />
+    <CurrentUserProvider>
+        <div className="container">
+          <Header />
+          <div className="content">
+            <Router />
+          </div>
+        </div>
       </CurrentUserProvider>
-
   )
 }
 

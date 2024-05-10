@@ -3,9 +3,13 @@ A Reddit-like website that interacts with a back-end server and database to serv
 
 - Link to delpoyed app: https://rc-nc-news.netlify.app/
 
-- You must be a valid user to comment; try logging in as "grumpy19".
+- Find an articles by topic in the navbar at the top
+- Sort the articles by date, number of comments or votes ascending/descending
+- Up or downvote an article
+- You must be a valid user to comment; try logging in as "grumpy19" and post one!
 
 - Here is the repo for the back-end server: https://github.com/robbochobbo/my-backend-project
+- Here is the hosted api: https://robbies-articles-website.onrender.com/api
 
 Required minimum versions:
 - Node.js v21.5.0
