@@ -1,6 +1,6 @@
 import { CurrentUserContext } from "../contexts/CurrentUser"
 import { useContext, useState } from "react"
-import getUserByUsername from "../utils/getUserByUsername"
+import {getUserByUsername} from "../utils/api"
 
 function Login (){
     const [usernameInput, setUsernameInput] = useState("")

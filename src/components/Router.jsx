@@ -4,8 +4,8 @@ import IndividualArticlePage from "./individualArticlePage/IndividualArticlePage
 import Login from './Login';
 import ErrorPage from './ErrorPage';
 
-function Router () {
 
+function Router () {
     return (
             <Routes>
                 <Route path="/*" element={<ErrorPage/>}/>

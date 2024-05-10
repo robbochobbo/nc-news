@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 import { CurrentUserContext } from "../contexts/CurrentUser"
 import { useContext, useEffect, useState } from "react"
 import Nav from "./Nav"
-import getTopics from "../utils/getTopics"
+import {getTopics} from "../utils/api"
 
 function Header () {
     const {currentUser, setCurrentUser} = useContext(CurrentUserContext)

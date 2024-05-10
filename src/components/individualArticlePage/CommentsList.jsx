@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import { CurrentUserContext } from '../../contexts/CurrentUser';
 import { useContext} from 'react';
-import deleteComment from '../../utils/deleteComment';
+import {deleteComment} from '../../utils/api';
 
 function Comments({comments, commentDeletedId, setCommentDeletedId}) {
     const {currentUser} = useContext(CurrentUserContext)

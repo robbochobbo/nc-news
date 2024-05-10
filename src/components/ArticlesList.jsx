@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import ArticleCard from "./ArticleCard"
-import getArticles from "../utils/getArticles"
+import {getArticles} from "../utils/api"
 import { useParams, useSearchParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import ErrorPage from "./ErrorPage"
