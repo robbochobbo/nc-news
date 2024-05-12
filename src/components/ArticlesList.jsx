@@ -38,12 +38,14 @@ function ArticlesList () {
         <>
             {error ? <ErrorPage errorMessage={error}/> : 
             <div>
-            <Link to="?sort_by=created_at"><button >sort by date</button></Link>
-            <Link to="?sort_by=comment_count"><button >sort by comments</button></Link>
-            <Link to="?sort_by=votes"><button >sort by votes</button></Link>
-            <button onClick={() => setSortOrder("asc")}>asc</button>
-            <button onClick={() => setSortOrder("desc")}>desc</button>
-                <section>
+                <div className="sort-bys">
+                    <Link className="sort-by-button" to="?sort_by=created_at"><button >sort by date</button></Link>
+                    <Link className="sort-by-button" to="?sort_by=comment_count"><button >sort by comments</button></Link>
+                    <Link className="sort-by-button" to="?sort_by=votes"><button >sort by votes</button></Link>
+                    <button className="sort-by-button" onClick={() => setSortOrder("asc")}>asc</button>
+                    <button className="sort-by-button" onClick={() => setSortOrder("desc")}>desc</button>
+                </div>
+                <section className="articles-list">
                     {articles.map((article) => {
                         if(topic === article.topic){
                             return <ArticleCard article={article} key={article.article_id}/>

@@ -28,9 +28,9 @@ function Login (){
    
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
             <label htmlFor="login-username">Login:</label>
-            <input id="login-username" placeholder="please enter your username..." onChange={handleInput} value={usernameInput}></input>
+            <input className="input-field" id="login-username" placeholder="please enter your username..." onChange={handleInput} value={usernameInput}></input>
             <input disabled={currentUser !== null || !usernameInput} type="submit"></input>
             <p className={err ? "" : "hidden"}>{err}</p>
             <p className={currentUser ? "" : "hidden"}>{`Welcome, ${currentUser}!`}</p>

@@ -27,18 +27,18 @@ function Comments({comments, commentDeletedId, setCommentDeletedId}) {
 
     return (
         <Card >
-            <ListGroup as="ul">
+            <ListGroup as="ul" className='comment-list'>
                 {comments.map((comment) => (
                     commentDeletedId === comment.comment_id? 
                     <p key={comment.comment_id}>deleted!</p> :
                     <div className="comment" key={comment.comment_id}>
                         <DeleteButton comment={comment}/>
                         <ListGroup.Item as="li">
-                            <div className="comment-body">
                                 <div className="comment-author">{comment.author} says: </div>
+                            <div>
                                 {comment.body}
                             </div>
-                            <Badge bg="primary" pill>votes: {comment.votes}</Badge>
+                            <Badge className="comment-votes" bg="primary" pill>votes: {comment.votes}</Badge>
                         </ListGroup.Item>
                     </div>
                 ))

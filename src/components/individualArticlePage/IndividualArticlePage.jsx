@@ -82,15 +82,20 @@ function IndividualArticlePage () {
     return(
         <>
             {error ? <ErrorPage errorMessage={error}/> : 
-                <div>
-                    <img src={individualArticle.article_img_url} /><p>{individualArticle.body}</p><p>votes: {currentVotes}</p><button className="vote-button" id="upvote" disabled={voteChange === 1} onClick={() => handleVote(1)}>Upvote</button><button className="vote-button" id="downvote" disabled={voteChange === -1} onClick={() => handleVote(-1)}>Downvote</button><form onSubmit={handleSubmit}>
-                    <label htmlFor="comment-body">comment:</label>
-                    <input id="comment-body" name="body" value={comment} onChange={handleInput}></input>
-                    <input type="submit" disabled={!currentUser.currentUser}></input>
-                    <p className={validComment ? "hidden" : ""}>Please provide comment</p>
-                    <p className={currentUser.currentUser ? "hidden" : ""}>You must be logged in to comment</p>
-                    <p className={successfulComment ? "" : "hidden"}>Comment post successful!</p>
-                    <p className={error ? "" : "hidden"}>Something went wrong, please try again.</p>
+                <div className="individual-article">
+                    <img className="individual-article-img"  src={individualArticle.article_img_url} /><p>{individualArticle.body}</p><p className="article-votes">Votes: {currentVotes}</p>
+                    <div className="vote-buttons">
+                        <button className="vote-button" id="upvote" disabled={voteChange === 1} onClick={() => handleVote(1)}>Upvote</button>
+                        <button className="vote-button" id="downvote" disabled={voteChange === -1} onClick={() => handleVote(-1)}>Downvote</button>
+                    </div>
+                    <form className="comment-submit-form" onSubmit={handleSubmit}>
+                        <label htmlFor="comment-input-body">Leave a comment:</label>
+                        <textarea id="comment-input-body" rows="4" cols="35" name="body" value={comment} onChange={handleInput}></textarea>
+                        <input id="comment-submit-button" type="submit" disabled={!currentUser.currentUser}></input>
+                        <p className={validComment ? "hidden" : ""}>Please provide comment</p>
+                        <p className={currentUser.currentUser ? "hidden" : ""}>You must be logged in to comment</p>
+                        <p className={successfulComment ? "" : "hidden"}>Comment post successful!</p>
+                        <p className={error ? "" : "hidden"}>Something went wrong, please try again.</p>
                     </form><></><Comments comments={comments} commentDeletedId={commentDeletedId} setCommentDeletedId={setCommentDeletedId} />
                 </div>
             }

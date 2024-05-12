@@ -26,16 +26,16 @@ function Header () {
 
 
     return(
-        <>
-            <Link to="/login">
+        <header>
+            <Link className="login-button" to="/login">
                 <button disabled={currentUser !== null}>{currentUser ? `User: ${currentUser}` : "Login"}</button>
             </Link>
-                <button className={currentUser ? "" : "hidden"} onClick={handleClick}>Logout</button>
+                <button id="logout-button" className={currentUser ? ""  : "hidden"} onClick={handleClick}>Logout</button>
             <Link to="/">
-                <h1> NC NEWS</h1>
+                <h1 className="NC-NEWS"> NC NEWS</h1>
             </Link >
             <Nav topics={topics}/>
-        </>
+        </header>
     )
 }
 
