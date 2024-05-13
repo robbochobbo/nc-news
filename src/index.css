@@ -95,8 +95,8 @@ ul {
 }
 
   .article-img{
-
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
   }
   .article-title{
@@ -120,7 +120,8 @@ ul {
   align-items: center
 }
 .individual-article-img{
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
 }
 .article-votes{
