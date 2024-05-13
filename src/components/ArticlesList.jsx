@@ -37,7 +37,7 @@ function ArticlesList () {
     return ( 
         <>
             {error ? <ErrorPage errorMessage={error}/> : 
-            <div>
+            <div className="website-body">
                 <div className="sort-bys">
                     <Link className="sort-by-button" to="?sort_by=created_at"><button >sort by date</button></Link>
                     <Link className="sort-by-button" to="?sort_by=comment_count"><button >sort by comments</button></Link>

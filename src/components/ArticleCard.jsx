@@ -5,8 +5,8 @@ function ArticleCard ({article}) {
 
 
     return (
-        <Link to={`/articles/${article.article_id}`} >
-                <Card className="article-card">
+        <Link className="article-card" to={`/articles/${article.article_id}`} >
+                <Card>
                     <Card.Img className="article-img"variant="top" src={article.article_img_url} />
                     <Card.Body>
                         <div className="article-title">
