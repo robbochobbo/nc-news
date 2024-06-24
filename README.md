@@ -19,4 +19,6 @@ To clone this repo:
 - Fork on GitHub: https://github.com/robbochobbo/nc-news
 - In your terminal, type: ``` git clone https://github.com/robbochobbo/nc-news ```
 - next: ``` cd nc-news ```
-- finally: ``` code . ```
+- then: ``` code . ```
+- then:  ``` npm i ```
+- to preview the app, ``` npm run dev ``` 
